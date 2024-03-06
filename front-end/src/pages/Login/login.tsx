@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import "./login.scss";
-import welcome from "../../src/assets/welcome.png";
+import welcome from '../../assets/welcome.png'
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Alert from "../../components/Alert/alert";

@@ -3,7 +3,6 @@ import { MdClose } from "react-icons/md";
 import "./transfer_popup.scss";
 import axios from "axios";
 import Alert from "../Alert/alert";
-import { useNavigate } from "react-router-dom";
 
 type Props = {
   onClose: () => void;
@@ -22,7 +21,7 @@ const TransferPopUp: FC<Props> = ({ onClose, token }) => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [message, setMessage] = useState({});
-  const Navigate = useNavigate();
+  
 
   const transferMoney = async () => {
     try {
@@ -47,7 +46,7 @@ const TransferPopUp: FC<Props> = ({ onClose, token }) => {
         setMessage(request.data);
         setTimeout(() => {
           setSuccess(false);
-          Navigate("/transfers");
+          window.location.reload;
         }, 3000);
       }
     } catch (error) {

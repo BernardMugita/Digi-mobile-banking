@@ -234,7 +234,7 @@ const Home = () => {
               <div className="icon">
                 <FaMoneyBillTrendUp />
               </div>
-              <p>Checks</p>
+              <p>Cheques</p>
             </Link>
           </div>
         </div>
