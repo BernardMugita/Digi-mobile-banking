@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project is a web application that provides various functionalities related to financial management. It includes features such as transferring money between accounts, stopping checks, and managing financial tips.
+This project is a mobile application that respresent the mobile banking infrasture. It is a Data Structures project with no third party intergration. It includes features such as transferring money between accounts, stopping cheques, and managing financial tips.
 
 ## Installation
 
@@ -51,13 +51,11 @@ php -S localhost:8000 -t public
 
 or use xampp control panel to run phpmyAdmin and MySQL servers. 
 
-2. Access the application in your web browser at `http://localhost:8000`.
+2 Access it on browswe:
 
-3. Use the provided API routes to interact with the application:
-
-- `/api/deposit-money`: Endpoint to deposit money into an account.
-- `/api/transfer-money`: Endpoint to transfer money between accounts.
-- `/api/stop-check`: Endpoint to stop a check by its check number.
+```
+http://localhost/phpmyadmin/
+```
 
 ## Contributing
 
@@ -70,10 +68,4 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 5. Push to the branch (`git push origin feature/new-feature`)
 6. Create a new Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
-
-You can customize this README file further based on your project's specific details and requirements.
