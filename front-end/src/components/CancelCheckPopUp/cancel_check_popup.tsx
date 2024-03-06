@@ -3,6 +3,7 @@ import { MdClose } from "react-icons/md";
 import "./cancel_check_popup.scss";
 import axios from "axios";
 import Alert from "../Alert/alert";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   onClose: () => void;
@@ -13,6 +14,7 @@ const StopCheckPopUp: FC<Props> = ({ onClose, token }) => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [checkNumber, setCheckNumber] = useState("");
+  const Navigate = useNavigate();
 
   const stopCheck = async () => {
     try {
@@ -33,6 +35,7 @@ const StopCheckPopUp: FC<Props> = ({ onClose, token }) => {
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
+          Navigate('/transfers')
         }, 3000);
       }
     } catch (error) {

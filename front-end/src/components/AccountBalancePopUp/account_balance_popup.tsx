@@ -3,6 +3,7 @@ import { MdClose } from "react-icons/md";
 import "./account_balance_popup.scss";
 import { FaUser } from "react-icons/fa";
 import axios from "axios";
+import Alert from "../Alert/alert";
 
 type Props = {
   onClose: () => void;
@@ -21,6 +22,8 @@ type Account = {
 
 const AccountBalancePopup: FC<Props> = ({ onClose, token }) => {
   const [account, setAccount] = useState({});
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
 
   const getAccountDetails = async () => {
     try {
@@ -39,17 +42,18 @@ const AccountBalancePopup: FC<Props> = ({ onClose, token }) => {
         setAccount(request.data);
       }
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setMessage("Something went wrong please try again");
     }
   };
-
-  console.log(account);
 
   useEffect(() => {
     getAccountDetails();
   }, []);
+
   return (
     <div className="AccountBalancePopup">
+      {error && <Alert message={message} status="error" />}
       <div id="close">
         <MdClose onClick={onClose} />
       </div>

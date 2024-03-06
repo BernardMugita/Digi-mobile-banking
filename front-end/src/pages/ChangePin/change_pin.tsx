@@ -5,6 +5,7 @@ import { AuthContext } from "../../Context/authContext";
 import Alert from "../../components/Alert/alert";
 import "./change_pin.scss";
 import TestimonialWidget from "../../components/Testimonial widget/TestimonialWidget";
+import { useNavigate } from "react-router-dom";
 
 type Props = object;
 
@@ -23,6 +24,8 @@ const ChangePin: FC<Props> = () => {
   const [error, setError] = useState(false);
   const { user } = useContext(AuthContext);
   const token = (user as User).token;
+
+  const Navigate = useNavigate();
 
   const changePin = async () => {
     try {
@@ -45,6 +48,7 @@ const ChangePin: FC<Props> = () => {
           setSuccess(true);
           setTimeout(() => {
             setSuccess(false);
+            Navigate("/account");
           }, 3000);
         } else {
           console.log("Pins do not match");

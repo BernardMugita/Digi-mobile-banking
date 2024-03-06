@@ -7,6 +7,7 @@ import { FcDataConfiguration } from "react-icons/fc";
 import { AuthContext } from "../../Context/authContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Alert from "../../components/Alert/alert";
 
 type Props = object;
 
@@ -33,6 +34,9 @@ const Account: FC<Props> = () => {
   const { user } = useContext(AuthContext);
   const [userDetails, setUserDetails] = useState({});
   const token = (user as User).token;
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
+
   const getUserDetails = async () => {
     try {
       const request = await axios.post<User>(
@@ -50,7 +54,11 @@ const Account: FC<Props> = () => {
         setUserDetails(request.data);
       }
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setMessage("Something went wrong try refreshing the page");
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     }
   };
 
@@ -60,6 +68,7 @@ const Account: FC<Props> = () => {
 
   return (
     <div className="Account">
+      {error && <Alert message={message} status="error" />}
       <TestimonialWidget />
       <div className="top">
         <div className="left">

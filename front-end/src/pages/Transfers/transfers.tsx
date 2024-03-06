@@ -8,6 +8,7 @@ import { AuthContext } from "../../Context/authContext";
 import StopCheckPopUp from "../../components/CancelCheckPopUp/cancel_check_popup";
 import axios from "axios";
 import TransferHistory from "../../components/TransferHistory/transfer_history";
+import Alert from "../../components/Alert/alert";
 
 type Props = object;
 
@@ -43,6 +44,8 @@ const Transfers: FC<Props> = () => {
   const token = (user as User).token;
   const [account, setAccount] = useState<Account | null>(null);
   const [transfers, setTransfers] = useState<Transfer[]>([]);
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
 
   const getAccountDetails = async () => {
     try {
@@ -61,7 +64,11 @@ const Transfers: FC<Props> = () => {
         setAccount(request.data);
       }
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setMessage("Something went wrong try refreshing the page");
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     }
   };
 
@@ -84,6 +91,7 @@ const Transfers: FC<Props> = () => {
       {stopCheck ? (
         <StopCheckPopUp token={token} onClose={() => setStopCheck(false)} />
       ) : null}
+      {error && <Alert message={message} status="error" />}
       <TestimonialWidget />
       <div className="banner">
         <h2>

@@ -46,7 +46,7 @@ const Deposit: FC<Props> = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer " + token
+            Authorization: "Bearer " + token,
           },
         }
       );
@@ -55,6 +55,7 @@ const Deposit: FC<Props> = () => {
         setMessage(request.data.message);
         setTimeout(() => {
           setSuccess(false);
+          navigate("/");
         }, 3000);
       }
     } catch (error) {

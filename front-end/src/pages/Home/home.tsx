@@ -3,13 +3,14 @@ import "./home.scss";
 import { FaArrowDownShortWide, FaMoneyBillTrendUp } from "react-icons/fa6";
 import { MdClose, MdPassword } from "react-icons/md";
 import { Key, useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Context/authContext";
+import { AuthContext } from "../../Context/authContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import AccountBalancePopup from "../components/AccountBalancePopUp/account_balance_popup";
-import FinancialAdviceComponent from "../components/FinancialAdvice/financial_advice_component";
-import DepositHistory from "../components/DepositHistory/deposit_history";
-import TestimonialWidget from "../components/Testimonial widget/TestimonialWidget";
+import AccountBalancePopup from "../../components/AccountBalancePopUp/account_balance_popup";
+import FinancialAdviceComponent from "../../components/FinancialAdvice/financial_advice_component";
+import DepositHistory from "../../components/DepositHistory/deposit_history";
+import TestimonialWidget from "../../components/Testimonial widget/TestimonialWidget";
+import Alert from "../../components/Alert/alert";
 
 type User = {
   success: boolean;
@@ -58,6 +59,8 @@ const Home = () => {
 
   const token = (user as User).token;
   const [account, setAccount] = useState({});
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
 
   const getUserDetails = async () => {
     try {
@@ -76,7 +79,11 @@ const Home = () => {
         setUserDetails(request.data);
       }
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setMessage("Something went wrong try refreshing the page");
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     }
   };
 
@@ -99,7 +106,11 @@ const Home = () => {
         setAccount(request.data);
       }
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setMessage("Something went wrong try refreshing the page");
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     }
   };
 
@@ -119,10 +130,14 @@ const Home = () => {
         setAccount(request.data);
         setTimeout(() => {
           window.location.reload();
-        }, 1000);
+        }, 3000);
       }
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setMessage("Something went wrong try refreshing the page");
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     }
   };
 
@@ -141,8 +156,6 @@ const Home = () => {
       : null;
 
   transactions.push(separateTransactions);
-
-  console.log(transactions);
 
   if (Object.keys(account).length === 0) {
     return (
@@ -168,6 +181,7 @@ const Home = () => {
           />
         ) : null}
         {showAdvice ? <FinancialAdviceComponent /> : null}
+        {error && <Alert message={message} status="error" />}
         <div className="top">
           <div className="top-section">
             <div className="user-id">

@@ -3,8 +3,8 @@ import "./login.scss";
 import welcome from "../../src/assets/welcome.png";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Alert from "../components/Alert/alert";
-import { AuthContext } from "../Context/authContext";
+import Alert from "../../components/Alert/alert";
+import { AuthContext } from "../../Context/authContext";
 
 const Login = () => {
   const [username, setUserName] = useState("");

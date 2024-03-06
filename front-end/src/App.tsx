@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./Register/register";
-import Home from "./Home/home";
-import Login from "./Login/login";
+import Home from "./pages/Home/home";
+import Login from "./pages/Login/login";
 import { AuthContext } from "./Context/authContext";
 import Deposit from "./pages/Deposit/deposit";
 import Footer from "./components/Footer/footer";
