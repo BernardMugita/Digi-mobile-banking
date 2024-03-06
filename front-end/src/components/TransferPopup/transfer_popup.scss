@@ -1,0 +1,97 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+
+.TransferPopUp {
+  height: 100vh;
+  width: 100%;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+
+  #close {
+    background-color: #fff;
+    width: fit-content;
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0.5rem 0.6rem;
+    border-radius: 30px;
+    @include centerDiv();
+    height: 2rem;
+    width: 2rem;
+    z-index: 500;
+    @include boxShaddow();
+  }
+
+  .transfer-card {
+    width: 70%;
+    background-color: #008800;
+    padding: 2rem;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    padding-bottom: 2rem;
+
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      span {
+        position: absolute;
+        top: -0.5rem;
+        left: 1rem;
+        color: #008800;
+        font-weight: 700;
+        font-size: 0.9rem;
+        background-color: #fff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+      }
+
+      input {
+        width: 85%;
+        padding: 1rem 2rem;
+        border: 1px solid #cecece;
+        border-radius: 30px;
+        outline: none;
+      }
+
+      select {
+        width: 100%;
+        padding: 1rem 2rem;
+        border: 1px solid #cecece;
+        background-color: #fff;
+        border-radius: 30px;
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 30px;
+      font-family: "Raleway";
+      font-weight: 700;
+      @include boxShaddow();
+      color: #008800;
+      font-weight: 700;
+    }
+  }
+}

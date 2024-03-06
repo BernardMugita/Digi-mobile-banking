@@ -1,0 +1,77 @@
+POST http://localhost/server/routes/auth_routes/register_user_routes.php
+Content-Type: application/json
+
+{
+    "firstname": "Jane",
+    "lastname": "Kikoria",
+    "username": "janekiko",
+    "email": "kikojane@gmail.com",
+    "pin": "1135"
+}
+
+###
+
+POST http://localhost/server/routes/auth_routes/sign_in_user.php
+Content-Type: application/json
+
+{
+    "username": "janekikoria",
+    "pin": "1135"
+}
+
+###
+POST http://localhost/server/routes/user_routes/get_user_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZjMxMTdlMDAtZWMzMC00OTRlLWJmNTctNzU0MjFjYTViYTgzIiwidXNlcm5hbWUiOiJqZXJvbWVtdWdpdGEifQ.LfT2myoXHG8TqpZIG-EeaYKVPowvNfEeUKJtznnw7ok
+
+###
+POST http://localhost/server/routes/user_routes/get_all_users_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYzE5MWY0N2YtOTM1OC00YzAxLTk1MzctMjg1NzhjZTAxOWZjIiwidXNlcm5hbWUiOiJqYW5la2lrbyJ9.TfgYLO61HtRvwx2Uya9l6hjkafx63IYV_BVYgTiuZsw
+
+### 
+POST http://localhost/server/routes/user_routes/update_user_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYzE5MWY0N2YtOTM1OC00YzAxLTk1MzctMjg1NzhjZTAxOWZjIiwidXNlcm5hbWUiOiJqYW5la2lrbyJ9.TfgYLO61HtRvwx2Uya9l6hjkafx63IYV_BVYgTiuZsw
+
+{
+    "firstname": "Kikoria",
+    "lastname": "Jane",
+    "email": "kikojane@gmail.com"
+}
+
+###
+POST http://localhost/server/routes/user_routes/delete_user_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYzE5MWY0N2YtOTM1OC00YzAxLTk1MzctMjg1NzhjZTAxOWZjIiwidXNlcm5hbWUiOiJqYW5la2lrbyJ9.TfgYLO61HtRvwx2Uya9l6hjkafx63IYV_BVYgTiuZsw
+
+### 
+POST http://localhost/server/routes/account_routes/activate_account_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZjMxMTdlMDAtZWMzMC00OTRlLWJmNTctNzU0MjFjYTViYTgzIiwidXNlcm5hbWUiOiJqZXJvbWVtdWdpdGEifQ.LfT2myoXHG8TqpZIG-EeaYKVPowvNfEeUKJtznnw7ok
+
+###
+POST http://localhost/server/routes/account_routes/deposit_money_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZjMxMTdlMDAtZWMzMC00OTRlLWJmNTctNzU0MjFjYTViYTgzIiwidXNlcm5hbWUiOiJqZXJvbWVtdWdpdGEifQ.LfT2myoXHG8TqpZIG-EeaYKVPowvNfEeUKJtznnw7ok
+
+{
+    "amount": 3000.00,
+    "depositType": "cash"
+}
+
+### 
+POST http://localhost/server/routes/account_routes/get_account_balance_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNmU3YjdlMTYtMDViOS00N2MxLTljOGItMzQ0ZGU1ZTk5MTZhIiwidXNlcm5hbWUiOiJqYW5la2lrb3JpYSJ9.Bbr2ks7U5bLKje1hYURicBr4fF_YugmJX_zMDFL34Bc
+
+
+###
+POST  http://localhost/server/routes/user_routes/change_pin_route.php
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZjMxMTdlMDAtZWMzMC00OTRlLWJmNTctNzU0MjFjYTViYTgzIiwidXNlcm5hbWUiOiJqZXJvbWVtdWdpdGEifQ.LfT2myoXHG8TqpZIG-EeaYKVPowvNfEeUKJtznnw7ok
+
+{
+    "oldPin": "3367",
+    "newPin": "1190"
+}

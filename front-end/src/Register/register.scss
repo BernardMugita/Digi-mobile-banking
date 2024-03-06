@@ -1,0 +1,117 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+
+.Register {
+  height: 100vh;
+  margin: 0;
+  padding: 1rem 1rem 1rem 1rem;
+  background: url(../../assets/backg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  background-color: #0088003d;
+
+  .logo {
+    background-color: #fff;
+    height: 6rem;
+    width: 6rem;
+    @include centerDiv();
+    border-radius: 50%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    @include boxShaddow();
+    z-index: 20;
+
+    #logo {
+      font-size: 3rem;
+    }
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    height: 35rem;
+    background-color: rgb(30, 183, 96);
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px 1px #bcbcbc;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+
+    .heading {
+      text-align: center;
+      margin-bottom: 1rem;
+
+      h1 {
+        color: #fff;
+        font-family: 1.3rem;
+        margin: 0;
+      }
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        position: absolute;
+        top: -0.5rem;
+        left: 1rem;
+        color: #008800;
+        font-weight: 700;
+        font-size: 0.9rem;
+        background-color: #fff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+      }
+
+      input {
+        width: 85%;
+        padding: 1rem 2rem;
+        border: 1px solid #cecece;
+        border-radius: 30px;
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      background-color: #fff;
+      border-radius: 30px;
+      font-family: "Raleway";
+      font-weight: 700;
+      @include boxShaddow();
+    }
+
+    p {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            color: #fff;
+        }
+    }
+  }
+}

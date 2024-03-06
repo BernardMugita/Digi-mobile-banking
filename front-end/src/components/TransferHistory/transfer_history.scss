@@ -1,0 +1,45 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TransferHistory {
+  display: flex;
+  border-bottom: 1px solid #cecece;
+  padding: 0.5rem 1rem;
+  align-items: center;
+
+  .icon {
+    background-color: #0088007a;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 50%;
+    @include centerDiv();
+    margin-right: 1rem;
+  }
+
+  .middle {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    h4 {
+      color: #000;
+    }
+
+    p {
+      color: #008800;
+      font-size: 0.9rem;
+    }
+  }
+
+  .right {
+    flex: 1;
+    p {
+      text-align: right;
+      color: #ff6000;
+      font-style: 0.9rem;
+    }
+  }
+}

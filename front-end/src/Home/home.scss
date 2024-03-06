@@ -1,0 +1,195 @@
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+
+@mixin customFlex() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100vh;
+  background-color: #0088003d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .activateAccount {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      background-color: #008800;
+      border-radius: 30px;
+      font-family: "Raleway";
+      font-weight: 700;
+      color: #fff;
+      @include boxShaddow();
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.Home {
+  height: 100vh;
+  background-color: #0088003d;
+  overflow-y: scroll;
+  position: relative;
+  padding-bottom: 4.5rem;
+
+  .advice {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .top {
+    background-color: #008800;
+    height: 20rem;
+    padding: 2rem;
+    position: relative;
+    border-bottom-right-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+
+    .top-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .user-id {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 30px;
+
+        span {
+          border-radius: 50%;
+          background-color: #008800;
+          height: 2rem;
+          width: 2rem;
+          @include centerDiv();
+          color: #fff;
+        }
+      }
+
+      .info {
+        background-color: #fff;
+        padding: 0.5rem 0.7rem;
+        @include boxShaddow();
+        border-radius: 50%;
+        color: #008800;
+      }
+    }
+
+    .account-balance {
+      background-color: #fff;
+      height: 12rem;
+      width: 12rem;
+      position: absolute;
+      top: 58%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      @include customFlex();
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 1rem;
+
+        span {
+          font-size: 1.5rem;
+          color: #008800;
+        }
+      }
+    }
+  }
+
+  .quick-actions {
+    padding: 2rem;
+    p {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      .action {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: #000;
+
+        .icon {
+          @include boxShaddow();
+          background-color: #fff;
+          padding: 1rem 1rem;
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          @include centerDiv();
+        }
+      }
+    }
+  }
+
+  .dep-head {
+    margin: 0rem 2rem;
+  }
+
+  .recent-transactions {
+    background-color: #fff;
+    height: 20rem;
+    overflow-y: scroll;
+    margin: 1rem;
+    border-radius: 10px;
+    position: relative;
+
+    #notice {
+      color: #000;
+      background-color: #ff620057;
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translate(-50%);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+  }
+}

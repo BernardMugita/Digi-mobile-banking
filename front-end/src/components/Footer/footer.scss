@@ -1,0 +1,75 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+
+.Footer {
+  display: flex;
+  height: 4rem;
+  background-color: #fff;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+  border-radius: 10px;
+
+  a , .more{
+    position: relative;
+    flex: 1;
+    @include centerDiv();
+    text-decoration: none;
+    border: 1px solid #cecece;
+    color: #8d8d8d;
+
+    #footer-icon {
+      font-size: 1.3rem;
+    }
+
+    &.active {
+      color: #008000;
+      background-color: #e4e4e4;
+    }
+  }
+
+  .more-tab {
+    position: absolute;
+    bottom: 110%;
+    right: 0;
+    height: 6rem;
+    width: 10rem;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    @include boxShaddow();
+
+    .line {
+        height: 1px;
+        width: 100%;
+        background-color: #cecece;
+    }
+    
+    a {
+        height: 3rem;
+        text-decoration: none;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logout {
+        height: 3rem;
+        text-decoration: none;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        color: #8d8d8d;
+    }
+  }
+}

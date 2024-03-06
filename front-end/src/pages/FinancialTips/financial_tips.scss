@@ -1,0 +1,24 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FinancialTips {
+  padding: 2rem;
+  background-color: #0088003d;
+  padding-bottom: 7rem;
+  height: 100vh;
+  overflow-y: scroll;
+
+  .banner {
+    color: #fff;
+    height: 10rem;
+    background-color: #008800;
+    padding: 1rem;
+    @include centerDiv();
+    border-top-right-radius: 20rem;
+    border-bottom-left-radius: 10rem;
+    margin-bottom: 2rem;
+  }
+}

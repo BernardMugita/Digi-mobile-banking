@@ -1,0 +1,88 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+.Deposit {
+  background-color: #0088003d;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+
+  .top-section {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 4rem;
+
+    .info {
+      background-color: #fff;
+      padding: 0.5rem 0.6rem;
+      border-radius: 50%;
+      @include centerDiv();
+      font-size: 1.3rem;
+      text-align: center;
+    }
+  }
+
+  .intro {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .deposit-container {
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      span {
+        position: absolute;
+        top: -0.5rem;
+        left: 1rem;
+        color: #008800;
+        font-weight: 700;
+        font-size: 0.9rem;
+        background-color: #fff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+      }
+
+      input {
+        width: 85%;
+        padding: 1rem 2rem;
+        border: 1px solid #cecece;
+        border-radius: 30px;
+        outline: none;
+      }
+
+      select {
+        width: 100%;
+        padding: 1rem 2rem;
+        border: 1px solid #cecece;
+        background-color: #fff;
+        border-radius: 30px;
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      width: 100%;
+      background-color: #008800;
+      border-radius: 30px;
+      font-family: "Raleway";
+      font-weight: 700;
+      @include boxShaddow();
+      color: #fff;
+      font-weight: 700;
+      z-index: 500;
+    }
+  }
+}

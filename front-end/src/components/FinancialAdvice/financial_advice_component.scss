@@ -1,0 +1,41 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+
+.FinancialAdviceComponent {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 20px;
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  right: 1rem;
+  z-index: 200;
+  @include boxShaddow();
+
+  .body {
+    color: #008800;
+    height: 5rem;
+    text-align: center;
+    @include centerDiv();
+  }
+
+  .line {
+    height: 2px;
+    width: 100%;
+    background-color: #8d8d8d;
+  }
+
+  .toggle {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

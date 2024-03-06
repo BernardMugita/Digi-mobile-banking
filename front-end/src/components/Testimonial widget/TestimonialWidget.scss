@@ -1,0 +1,102 @@
+.TestimonialWidget {
+    height: 90vh;
+    background-color: #ff6000ce;
+    border-bottom-left-radius: 25rem 25rem;
+    border-top-right-radius: 25rem 25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .circle_one {
+        height: 10rem;
+        width: 10rem;
+        border: 5px solid #ffffff53;
+        border-radius: 50%;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }   
+
+    .circle_two {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid #ffffff53;
+        border-radius: 50%;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    .circle_three {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        border: 5px solid #ffffff53;
+        position: absolute;
+        top: 5%;
+        left: 15%;
+    }
+    
+    .circle_fill_one {
+        height: 3rem;
+        width: 3rem;
+        background-color: #ffffff53;
+        border-radius: 50%;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }
+
+    .circle_fill_two {
+        height: 2rem;
+        width: 2rem;
+        background-color: #ffffff53;
+        border-radius: 50%;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+    }
+
+    .circle_fill_three {
+        height: 2rem;
+        width: 2rem;
+        background-color: #ffffff53;
+        border-radius: 50%;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+
+    .diagonal_bar_one {
+        height: 4rem;
+        width: 20rem;
+        background-color: #ffffff22;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: rotate(45deg);
+        border-radius: 30px;
+    }
+
+    .diagonal_bar_two {
+        height: 4rem;
+        width: 20rem;
+        background-color: #ffffff22;
+        position: absolute;
+        top: 70%;
+        left: 40%;
+        transform: rotate(45deg);
+        border-radius: 30px;
+    }
+
+    .diagonal_bar_three {
+        height: 4rem;
+        width: 20rem;
+        border: 5px solid #ffffff22;
+        position: absolute;
+        top: 95%;
+        left: 90%;
+        transform: rotate(45deg);
+        border-radius: 30px;
+    }
+}

@@ -1,0 +1,86 @@
+@mixin centerDiv() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+
+.Account {
+  background-color: #0088003d;
+  height: 100vh;
+  padding: 2rem;
+  padding-top: 5rem;
+
+  .top {
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    gap: 0.5rem;
+
+    .left {
+      flex: 1;
+      span {
+        @include centerDiv();
+        font-size: 6rem;
+        color: #008800;
+      }
+    }
+
+    .right {
+      flex: 3;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        width: 40%;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .middle {
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    margin-bottom: 4rem;
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #8d8d8d;
+    }
+  }
+
+  .bottom {
+    .control-center {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      button,
+      a {
+        padding: 2rem 1rem;
+        flex: 1;
+        border: none;
+        border-radius: 30px;
+      }
+      #delete-button {
+        background-color: red;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+      #pin-button {
+        background-color: #cecece;
+        background-color: orange;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

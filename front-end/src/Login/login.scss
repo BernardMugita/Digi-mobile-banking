@@ -1,0 +1,118 @@
+@mixin customFlex() {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+@mixin boxShaddow() {
+  box-shadow: 3px 3px 5px 1px #818181;
+}
+
+.Login {
+  background-color: #0088003d;
+  height: 100vh;
+  padding: 2rem;
+  padding-top: 4rem;
+  position: relative;
+
+  .top-deco {
+    height: 20rem;
+    background-color: #ffffff77;
+    border-radius: 40%;
+    border-top-right-radius: 40rem;
+    width: 80%;
+    @include customFlex();
+    padding: 2rem;
+
+    img {
+      width: 15rem;
+    }
+
+    h4 {
+      font-size: 2rem;
+      color: #008800;
+      margin: 0;
+    }
+
+    p {
+      font-weight: 700;
+    }
+  }
+
+  .login-form {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    #password {
+      width: 80%;
+      padding: 1rem 2rem;
+      border: 1px solid #ffffff77;
+      background-color: #fff;
+      border-radius: 30px;
+
+      #eye {
+        color: #0088005f;
+        font-size: 1.5rem;
+      }
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      width: 80%;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      border-radius: 30px;
+
+      span {
+        position: absolute;
+        top: -0.5rem;
+        left: 1rem;
+        color: #008800;
+        font-weight: 700;
+        font-size: 0.9rem;
+        background-color: #fff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid #ffffff77;
+        background-color: #fff;
+        border-radius: 30px;
+        outline: none;
+        padding: 0.2rem 0.5rem;
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      background-color: #fff;
+      border-radius: 30px;
+      font-family: "Raleway";
+      font-weight: 700;
+      @include boxShaddow();
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
