@@ -1,5 +1,3 @@
-Sure, here's a sample README file based on the discussions we've had:
-
 ---
 
 # Project Name
